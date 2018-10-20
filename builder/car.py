@@ -1,3 +1,13 @@
+# Car parts.
+class Wheel:
+   size = None
+
+class Engine:
+   horsepower = None
+
+class Body:
+   shape = None
+
 # The whole product
 class Car:
    def __init__(self):

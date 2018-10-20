@@ -1,4 +1,7 @@
 class Director:
+  """
+    Construct an object using the Builder interface.
+  """
    __builder = None
    
    def setBuilder(self, builder):
