@@ -33,19 +33,23 @@ You want to play also .mp4 and .vlc files by UniversalPlayer. To solve this prob
 
 ## Instruction
 
-1. Open **adapter.py** file.
-2. You see that there are classes, that already created, but methods are not implemented.
-3. Then, look at the file **tests/test_adapter.py**.
+1. Open **adapter.py**.
+
+2. You see that there are classes, but methods are not implemented.
+
+3. Look at the file **tests/test_adapter.py**.
+
 4. Run these tests:
-+ Open terminal
-+ Run command:
-```python
-python3 -m unittest tests/test_adapter.py'```
+
+```python3 -m unittest tests/test_adapter.py'```
+
 You will see that there are 19 tests, and at first you have (failures=4, errors=13)
+
 5. To pass all tests, complete functions, which are written in **adapter.py** file.
+
 6. You should complete one function at a time, then be sure that you have less failures
 or/and erros left. Commit and push your changes.
+
 7. Finally, you have to be sure that no test is failed and all of them are passed.
-8. Compare your answers with already written answer in **answers/adapter.py**.
-9. Commit and push last modified file to server.
+8. Analyze our implementation **answers/adapter.py**.
 
