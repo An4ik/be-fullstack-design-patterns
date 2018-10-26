@@ -88,6 +88,13 @@ class Man(Person):
         return self.name + " is a man and " + self.job.work()
 
 class Woman(Person):
+    """
+    Class that inherits from Person class and has it's own implementation of __str__ magic function.
+
+    Attributes:
+        name - string - name of the person
+        job - JobStrategyAbstract - object that implements JobStrategyAbstract that has method work
+    """
     def __init__(self, name, job):
         """
         :param name: string
