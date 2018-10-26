@@ -1,117 +1,45 @@
-"""
-    Builder Design Pattern is a unique design pattern which helps in building complex object
-
-    using simple objects and uses an algorithmic approach.
-
-    This design pattern comes under the category of creational pattern.
-
-    In this design pattern, a builder class builds the final object in step-by-step procedure.
-
-    This builder is independent of other objects.
-"""
-
-from director import *
-from car import *
-
-class Builder:
-      """
-            Specify an abstract interface for creating parts of a Product(Car) object.
-      """
-      def getWheel(self):
-          """
-              Gets Wheel from a Car
-          """
-          pass
-
-      def getEngine(self):
-          """
-              Gets Engine from a Car
-          """
-          pass
-
-      def getBody(self):
-          """
-              Gets Body from a Car
-          """
-          pass
-
-class JeepBuilder(Builder):
-    """
-        Concrete builder type. Here we have implementation of Builder interface.
-
-        Parameters:
-            Builder - gets functions of Builder interface
-
-        Attributes:
-            name - name of a car that we want to build
-
-        Returns:
-            name : string
-    """
-
+# Abstract Building
+class Building(object):
     def __init__(self):
-        self.name = "Jeep"
+        self.build_floor()
+        self.build_size()
 
-    def __str__(self):
-        return self.name
+    def build_floor(self):
+        raise NotImplementedError
 
-    def getWheel(self):
-        """
-            Initialize wheel of a car, sets its size and returns it.
+    def build_size(self):
+        raise NotImplementedError
 
-            Returns:
-                wheel size: integer
-        """
-        wheel = Wheel()
-        wheel.size = 22
-        return wheel
-
-    def getEngine(self):
-        """
-            Initialize engine of a car, sets its power and returns it.
-
-            Returns:
-                engine power: integer
-        """
-        engine = Engine()
-        engine.horsepower = 400
-        return engine
-
-    def getBody(self):
-        """
-            Initialize body of a car, sets its shape and returns it.
-
-            Returns:
-                body shape: string
-        """
-        body = Body()
-        body.shape = "SUV"
-        return body
+    def __repr__(self):
+        return 'Floor: {0.floor} | Size: {0.size}'.format(self)
 
 
+# Concrete Buildings
+class House(Building):
+    def build_floor(self):
+        self.floor = 'One'
 
-def main():
-    """
-        Main function where we initialize our program
+    def build_size(self):
+        self.size = 'Small'
 
-        Steps:
-            1. We create some Builder. It is the concrete builder, not abstract interface object.
-            2. Create a Director that is responsible for construction between Builder and Car.
-            3. We set the directors builder.
-            4. Then get and show a car that we want to build to the Director.
-            5. In the last step we print the parameters of a car that we have built.
-    """
-    jeepBuilder = JeepBuilder()  # initializing the class
-   
-    director = Director()
-   
-    # Build Jeep
-    # print("Jeep")
-    director.setBuilder(jeepBuilder)
-    jeep = director.getCar()
-    print(jeepBuilder)
-    jeep.specification()
-    print()
 
+class Flat(Building):
+    def build_floor(self):
+        self.floor = 'More than One'
+
+    def build_size(self):
+        self.size = 'Big'
+
+
+def construct_building(cls):
+    building = cls()
+    building.build_floor()
+    building.build_size()
+    return building
+
+# Client
 if __name__ == "__main__":
-    main()
+    house = House()
+    print(house)
+    flat = construct_building(Flat)
+    print(flat)
