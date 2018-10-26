@@ -22,7 +22,7 @@ class DeveloperStrategy(JobStrategyAbstract):
     def work(self):
         """
         :rtype string
-        :return:
+        :return: string describing developer's job
         """
         return "is working as a Developer at Google."
 
@@ -33,7 +33,7 @@ class TeacherStrategy(JobStrategyAbstract):
     def work(self):
         """
         :rtype string
-        :return:
+        :return: string describing teacher's job
         """
         return "is working as a Teacher in school."
 
@@ -44,7 +44,7 @@ class DoctorStrategy(JobStrategyAbstract):
     def work(self):
         """
         :rtype string
-        :return:
+        :return: string describing doctor's job
         """
         return "is working as a Doctor in hospital."
 
@@ -83,7 +83,7 @@ class Man(Person):
     def __str__(self):
         """
         :rtype string
-        :return:
+        :return: string describing person
         """
         return self.name + " is a man and " + self.job.work()
 
@@ -98,6 +98,6 @@ class Woman(Person):
     def __str__(self):
         """
         :rtype string
-        :return:
+        :return: string describing person
         """
         return self.name + " is a woman and " + self.job.work()
