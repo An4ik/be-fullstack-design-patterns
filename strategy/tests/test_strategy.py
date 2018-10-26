@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from strategy import JobStrategyAbstract, DeveloperStrategy, TeacherStrategy, DoctorStrategy, Man, Woman
+from strategy import JobStrategyAbstract, DeveloperStrategy, TeacherStrategy, DoctorStrategy, Person, Man, Woman
 
 class StrategyTest(TestCase):
     def test_instance(self):
@@ -27,6 +27,18 @@ class StrategyTest(TestCase):
         Make sure that DoctorStrategy is subclass of JobStrategyAbstract.
         """
         self.assertTrue(issubclass(DoctorStrategy, JobStrategyAbstract))
+
+    def test_subclass_Man(self):
+        """
+        Make sure that Man is subclass of Person.
+        """
+        self.assertTrue(issubclass(Man, Person))
+
+    def test_subclass_Woman(self):
+        """
+        Make sure that Woman is subclass of Person.
+        """
+        self.assertTrue(issubclass(Woman, Person))
 
     def test_init(self):
         """
