@@ -39,7 +39,7 @@ There is also **Person** class, which has 2 attributes name and job.
    
         python3 -m unittest tests/test_strategy.py
         
-    You will see that it ran 4 tests and all of them FAILED (failures=1, errors=3)
+    You will see that it ran 8 tests and all of them FAILED (failures=5, errors=3)
 
 4. Now, complete classes and methods in **strategy.py**.
 
