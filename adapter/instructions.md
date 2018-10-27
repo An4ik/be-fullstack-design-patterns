@@ -1,50 +1,55 @@
 ## Theory
 
-### What is Factory Design Pattern?
+### What is Adapter Design Pattern?
 
-The **Factory Design Pattern** comes under creational pattern as this pattern provides one of the best ways to create an object.
+The **Adapter Design Pattern** helps to convert the interface of a class into another interface that the client expects. For example, an electric kettle with square-pinned plug (client) expects to have a square-pin socket. But the wall-socket (our existing class) has round pins. The pin converter (adapter) comes to the rescue.
 
 #### Why the need for it: Problem Statement
-Factory methods deal with the problem of creating objects without having to specify the exact class of the object that will be created.
+The Adapter Pattern is needed when the interface of an existing class needs to be morphed into one that the client wants
 
 #### Terminology
+**Adaptee**: The existing class whose interface needs to be morphed.
 
-**factory**: The static method which renpond to creating objects. 
+**Adapter**: The class in charge of morphing the interface of the adaptee to cater to client's needs.
 
-**Creator**: The class which creates an product objects with factory method.
-
-**Product**: The object which subclasses from Creator object.
+**Client**: The class who wishes that wants to change the interface of an existing class to suit its own needs.
 
 
 ## Explanation of Adapter Design Pattern Example
 
-You have **Company** creator class, that has static factory method which should be refer to creating objects. You want to create objects without directly its initialization.
+You have **MediaFile** class, that has file with its name and extension. You want to play this media file by player.
+There are 2 kind of players:
++ **MediaPlayer** (Have only play() method)
++ **AdvancedMediaPlayer** (Have play_mp4() and play_vlc() methods)
 
-There are 2 kind of companies which extends from company:
-+ **Apple** (Have only invent() method)
-+ **Google** (Have only invent() method)
+Advanced Media Player can be in two forms:
++ **MP4Player** (Can play only files in .mp4 format)
++ **VLCPlayer**    (Can play only files in .vlc format)
+
+
+There is also **UniversalPlayer**, which is *MediaPlayer* player type, and that now can only play files in .mp3 format.
+You want to play also .mp4 and .vlc files by UniversalPlayer. To solve this problem, you decided to implement **MediaAdapter** class, which can in some way play these video files, and attach it to your UniversalPlayer.
 
 
 ## Instruction
 
-1. Open **factory.py**.
+1. Open **adapter.py**.
 
 2. You see that there are classes, but methods are not implemented.
 
-3. Look at the file **tests/test_factory.py**.
+3. Look at the file **tests/test_adapter.py**.
 
 4. Run these tests:
 
-```python3 -m unittest tests/test_factory.py'```
+```python3 -m unittest tests/test_adapter.py'```
 
-You will see that there are few tests, and at first you should have failed test cases 
+You will see that there are 19 tests, and at first you have (failures=4, errors=13)
 
-5. To pass all tests, complete functions, which are written in **factory.py** file.
+5. To pass all tests, complete functions, which are written in **adapter.py** file.
 
 6. You should complete one function at a time, then be sure that you have less failures
 or/and erros left. Commit and push your changes.
 
 7. Finally, you have to be sure that no test is failed and all of them are passed.
-
-8. Analyze our implementation **answers/factory.py**.
+8. Analyze our implementation **answers/adapter.py**.
 
