@@ -7,9 +7,6 @@ class Shape(object):
     Shape --↓
              Rectangle --↓
                           Square
-
-    Class Shape is aimed mainly for parent class and consisits of abstract methods for using inherited classes.
-    
     """
     __metaclass__ = ABCMeta
 
