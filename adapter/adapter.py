@@ -4,12 +4,12 @@
     somewhere that has outlets in a different shape. Following this idea,
     the Adapter pattern is useful to integrate classes that couldn't be
     integrated due to their incompatible interfaces.
-    """
+"""
 
 class MediaFile:
     """
         Class is used to represent ordinary media file.
-        """
+    """
     def __init__(self, file):
         
         """
@@ -22,7 +22,7 @@ class MediaFile:
             Split 'file' with '.' delimeter and set delimeted variables to these attributes:
             * _file_name.
             * _file_extension.
-            """
+        """
         
         pass
 
@@ -31,7 +31,7 @@ class MediaPlayer:
     """
         Class is used to represent MediaPlayer interface, which must be implemented by child classes.
         Class has abstract method play(), which have to be implemented.
-        """
+    """
     
     def __init__(self, mediaFile):
         
@@ -42,7 +42,7 @@ class MediaPlayer:
             
             Initialize class with 'mediafile' argument as MediaPlayer(mediafile).
             Set argument to '_playing_file' attribute.
-            """
+        """
         
         pass
     
@@ -51,7 +51,7 @@ class MediaPlayer:
         """
             Abstract method.
             Raise NotImplementedError with message.
-            """
+        """
         pass
 
 class AdvancedMediaPlayer:
@@ -59,7 +59,7 @@ class AdvancedMediaPlayer:
     """
         Class is used to represent AdvancedMediaPlayer interface, which must be implemented by child classes.
         Class has abstract methods play_vlc() and play_mp4(), which have to be implemented.
-        """
+    """
     
     def __init__(self, mediaFile):
         
@@ -71,7 +71,7 @@ class AdvancedMediaPlayer:
             Initialize class with 'mediafile' argument as AdvancedMediaPlayer(mediafile).
             Set argument to '_playing_file' attribute.
             
-            """
+        """
         
         pass
     
@@ -80,7 +80,7 @@ class AdvancedMediaPlayer:
         """
             Abstract method.
             Raise NotImplementedError with message.
-            """
+        """
         
         pass
     
@@ -89,7 +89,7 @@ class AdvancedMediaPlayer:
         """
             Abstract method.
             Raise NotImplementedError with message.
-            """
+        """
         
         pass
 
@@ -99,7 +99,7 @@ class MP4Player(AdvancedMediaPlayer):
     """
         Child class, which is inherited from AdvancedMediaPlayer interface, and implements play_mp4() method.
         
-        """
+    """
     
     
     def play_mp4(self):
@@ -108,7 +108,7 @@ class MP4Player(AdvancedMediaPlayer):
             rtype: String.
             return: The current playing mediafile in 'mp4' format, otherwise raise ExceptionError with message.
             return format: "Playing "+file_name+"."+file_extension.
-            """
+        """
         pass
 
 class VLCPlayer(AdvancedMediaPlayer):
@@ -116,7 +116,7 @@ class VLCPlayer(AdvancedMediaPlayer):
     """
         Child class, which is inherited from AdvancedMediaPlayer interface, and implements play_vlc() method.
         
-        """
+    """
     
     def play_vlc(self):
         
@@ -124,7 +124,7 @@ class VLCPlayer(AdvancedMediaPlayer):
             rtype: String.
             return: The current playing mediafile in 'vlc' format, otherwise raise ExceptionError with message.
             return format: "Playing "+file_name+"."+file_extension.
-            """
+        """
         pass
 
 
@@ -132,7 +132,7 @@ class MediaAdapter(MediaPlayer):
     
     """
         Class is used to represent MediaAdapter adapter, which is inherited from MediaPlayer interface, and implements play() method.
-        """
+    """
     
     def __init__(self, mediaFile):
         
@@ -145,7 +145,7 @@ class MediaAdapter(MediaPlayer):
             Set argument to '_playing_file' attribute.
             Initialize '_advancedMediaPlayer' attribute and set the value as a 'None'.
             
-            """
+        """
         
         pass
     
@@ -159,7 +159,7 @@ class MediaAdapter(MediaPlayer):
             Set argument to '_advancedMediaPlayer' attribute as:
             * VLCPlayer("Hello.vlc"), if format of mediafile is 'vlc', or,
             * MP4Player("Hello.mp4"), if format of mediafile is 'mp4'.
-            """
+        """
         
         pass
 
@@ -169,7 +169,7 @@ class UniversalPlayer(MediaPlayer):
     """
         Class is used to represent UniversalPlayer interface, which is inherited from MediaPlayer interface, and implements play() method.
         
-        """
+    """
     
     def __init__(self, mediaFile):
         
@@ -181,7 +181,7 @@ class UniversalPlayer(MediaPlayer):
             Initialize class with 'mediafile' argument as UniversalPlayer(mediafile).
             Set argument to '_playing_file' attribute.
             Initialize '_mediaAdapter' attribute and set the value as a 'None'.
-            """
+        """
         
         pass
     
@@ -194,7 +194,7 @@ class UniversalPlayer(MediaPlayer):
             
             Set argument to '_mediaAdapter' attribute as MediaAdapter("Hello.vlc") or as MediaAdapter("Hello.mp4"),
             if format of mediafile is 'vlc' or 'mp4' respectively.
-            """
+        """
         
         pass
 
