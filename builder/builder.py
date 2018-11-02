@@ -54,10 +54,10 @@ class Building(object):
         self.build_size()
 
     def build_floor(self):
-        raise NotImplementedError
+        pass
 
     def build_size(self):
-        raise NotImplementedError
+        pass
 
     def __repr__(self):
         return 'Floor: {0.floor} | Size: {0.size}'.format(self)
@@ -66,9 +66,11 @@ class Building(object):
 # Concrete Buildings
 class House(Building):
     """
-        This is the concrete builder class.
+        This is the concrete builder class named House.
+
         It inherits the attributes of Building class and then sets them.
-        We have set the floor of building as 1 and size as "Small"
+
+        Here we set the floor of building as 1 and size as "Small"
     """
 
     def build_floor(self):
@@ -80,9 +82,11 @@ class House(Building):
 
 class Apartment(Building):
     """
-            This is the concrete builder class.
-            It inherits the attributes of Building class and then sets them.
-            We have set the floor of building as 1 and size as "Small"
+        This is the concrete builder class named Apartment.
+
+        It inherits the attributes of Building class and then sets them.
+
+        Here we set the floor of building as 1 and size as "Small"
     """
     def build_floor(self):
         self.floor = 3
@@ -108,7 +112,12 @@ def construct_building(cls):
 
 # Client
 if __name__ == "__main__":
+
     house = House()
     print(house)
+
     flat = construct_building(Apartment)
     print(flat)
+
+    building = Building()
+    print(building)
