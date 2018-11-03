@@ -67,3 +67,13 @@ fabric.properties
 
 *.pyc
 .DS_Store
+
+
+.idea/
+
+venv
+env
+.venv
+.env
+
+.DS_Store
