@@ -37,7 +37,7 @@ There are 2 kind of companies which extends from company:
 
 ```python3 -m unittest tests/test_factory.py'```
 
-You will see that there are few tests, and at first you should have failed test cases 
+You will see that there are few tests, and at first you should have 4 failed test cases 
 
 5. To pass all tests, complete functions, which are written in **factory.py** file.
 

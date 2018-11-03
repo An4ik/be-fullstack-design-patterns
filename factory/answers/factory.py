@@ -4,7 +4,6 @@ Factory Design Pattern.
 
 class Company(object):
     
-    @staticmethod
     def factory(type):
         """
         Ensure that your base class has static factory method.

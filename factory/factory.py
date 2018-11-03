@@ -13,12 +13,12 @@ class Company(object):
         """
     factory = staticmethod(factory)
 
-class Google(Company):
+class Google():
     """
     Ensure that its parent class implemented factory method
     """
 
-class Apple(Company):
+class Apple():
     """
     Ensure that its parent class implemented factory method
     """
